@@ -2,16 +2,17 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "../styles/Hero.css";
 import me from "../images/me3.png";
+import { Button } from "@material-ui/core";
 const useStyles = makeStyles({
   hero: {
     display: "flex",
     height: "100vh",
   },
   heroLeft: {
+    flex: "1",
     display: "flex",
     alignItems: "center",
     justifycontent: "center",
-    flex: "1",
   },
   heroRight: {
     flex: "1",
@@ -22,14 +23,17 @@ const useStyles = makeStyles({
     height: "50%",
     display: "flex",
     flexDirection: "column",
+    marginTop: "100px",
   },
   greeting: {
     fontSize: "30px",
     fontWeight: "300",
+    marginBottom: "10px",
   },
   name: {
     fontSize: "60px",
     fontWeight: "bold",
+    marginBottom: "50px",
   },
   title: {
     height: "50px",
@@ -62,6 +66,10 @@ const useStyles = makeStyles({
     top: "0",
     right: "0",
   },
+  btn: {
+    marginTop: "20px",
+    backgroundColor: "#002450",
+  },
 });
 
 export default function Hero() {
@@ -70,10 +78,7 @@ export default function Hero() {
     <div>
       <div className={classes.hero}>
         <div className={classes.heroLeft}>
-          <div
-            style={{ justifyContent: "space-between" }}
-            className={classes.leftWrapepr}
-          >
+          <div className={classes.leftWrapepr}>
             <h2 className={classes.greeting}>Hello, I am</h2>
 
             <h1 className={classes.name}>Anjana Samarakoon</h1>
@@ -85,12 +90,14 @@ export default function Hero() {
                 <div className={classes.titleItem}>Blogger</div>
               </div>
             </div>
-            <div className={classes.heroPara}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
-              illo ipsa maxime adipisci sequi facere veniam debitis beatae, amet
-              deserunt pariatur vitae nemo fugiat. Facere similique voluptate
-              fugiat iure ducimus?
-            </div>
+            <Button
+              className={classes.btn}
+              variant="contained"
+              size="large"
+              color="primary"
+            >
+              Contact Me
+            </Button>
           </div>
         </div>
         <div className={classes.heroRight}>
